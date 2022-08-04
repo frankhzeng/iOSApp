@@ -11,7 +11,7 @@ class WordSelectorController: UIViewController, UITableViewDataSource, UITableVi
     }()
 
     weak var delegate: WordSelectorDelegate!
-    var list: List!
+    var list: List?
     @IBOutlet var tableView: UITableView!
     var words: [Word] = []
     var chosenWords: [Word] = [];
@@ -22,7 +22,6 @@ class WordSelectorController: UIViewController, UITableViewDataSource, UITableVi
         let fetchRequest = NSFetchRequest<Word>(entityName: "Word")
         //let mutableList: NSMutableSet = list.mutableCopy() as! NSMutableSet;
         
-        fetchRequest.predicate = NSPredicate(format: "NOT (word IN %@)", list)
         do {
             self.words = try self.context.fetch(fetchRequest);
         } catch let error {
@@ -85,7 +84,6 @@ extension WordSelectorController {
             let newWord = Word(context: self.context);
             newWord.word = cword!
             newWord.def = cell.defTextView.text;
-            newWord.index = String(cword!.first ?? "#");
             chosenWords.append(newWord);
             context.insert(newWord);
             do {
@@ -94,12 +92,12 @@ extension WordSelectorController {
                 print("error saving new selector word to context: \(error)")
             }
         }
-//        if let list = list {
-        self.delegate.wordSelectorDidAddNewWords?(words: self.chosenWords, toList: list)
-//
-//        } else {
-//            self.delegate.wordSelectorDidAddWords?(words: self.chosenWords);
-//        }
+        if let list = list {
+            self.delegate.wordSelectorDidAddNewWords?(words: self.chosenWords, toList: list)
+
+        } else {
+            self.delegate.wordSelectorDidAddWords?(words: self.chosenWords);
+        }
         self.dismiss(animated: true, completion: nil);
         
     }

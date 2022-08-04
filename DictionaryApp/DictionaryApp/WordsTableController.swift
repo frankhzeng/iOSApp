@@ -6,19 +6,6 @@ class WordsTableController: UITableViewController {
     lazy var context: NSManagedObjectContext = {
         return (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext;
     }()
-    
-    lazy var fetchedResultsController: NSFetchedResultsController<Word> = {
-        // 1
-        let fetchRequest: NSFetchRequest<Word> = Word.fetchRequest()
-        // 2
-        let sortDescriptor = NSSortDescriptor(key: #keyPath(Word.word), ascending: true);
-        
-        fetchRequest.sortDescriptors = [sortDescriptor];
-        let fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest,
-                                                                  managedObjectContext: self.context, sectionNameKeyPath: #keyPath(Word.index),
-            cacheName: nil)
-      return fetchedResultsController
-    }()
     let searchController = UISearchController(searchResultsController: nil);
 
     var isFiltering: Bool {
@@ -29,39 +16,10 @@ class WordsTableController: UITableViewController {
     @IBOutlet var newDefTextView: UITextView!
     @IBOutlet var newWordView: UIView!
     @IBOutlet var plusButton: UIButton!
-//    var words: [Word] = []
+    
+    var words: [Word] = []
     var filteredWords: [Word] = [];
 
-}
-extension WordsTableController {
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        do {
-            try self.fetchedResultsController.performFetch();
-        } catch let error as NSError {
-            print ("error fetching with fetched results controller: \(error)")
-        }
-        
-        newDefTextView.layer.cornerRadius = 5;
-        searchController.searchBar.autocapitalizationType = .none;
-        searchController.searchResultsUpdater = self;
-        searchController.obscuresBackgroundDuringPresentation = false;
-        self.definesPresentationContext = true;
-        self.navigationItem.searchController = searchController;
-        
-        
-        self.tableView.tableFooterView = UIView()
-        self.newWordView.layer.cornerRadius = 10
-        tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.handleTap(tapRecognizer:)));
-        tapRecognizer.delegate = self
-        self.navigationController!.view.addGestureRecognizer(tapRecognizer);
-        tapRecognizer.isEnabled = false;
-    }
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated);
-        self.tableView.reloadData();
-    }
 }
 extension WordsTableController : UIGestureRecognizerDelegate {
     @IBAction func addButton() {
@@ -87,18 +45,12 @@ extension WordsTableController : UIGestureRecognizerDelegate {
             let newWord = Word(context: self.context)
             newWord.word = newWordTF.text!
             newWord.def = newDefTextView.text!
-            newWord.index = String(newWordTF.text!.first ?? "#")
-            //words.append(newWord);
-            
+            words.append(newWord);
+            context.insert(newWord);
             do {
                 try self.context.save()
             } catch let error {
                 print("error saving: \(error)");
-            }
-            do {
-                try self.fetchedResultsController.performFetch();
-            } catch let error as NSError {
-                print ("error fetching with fetched results controller: \(error)")
             }
             self.tableView.reloadData();
             UIView.animate(withDuration: 0.2, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 12, options: .curveEaseOut) {
@@ -136,31 +88,20 @@ extension WordsTableController : UIGestureRecognizerDelegate {
     }
 } //buttons
 extension WordsTableController { //load page
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        if (isFiltering) {
-            return 1;
-        }
-        return self.fetchedResultsController.sections?.count ?? 0;
-    }
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if (isFiltering) {
             return filteredWords.count;
             
         }
-        guard let sectionInfo = self.fetchedResultsController.sections?[section] else {
-            return 0;
-        }
-        return sectionInfo.numberOfObjects;
+        return words.count;
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "WordCell", for: indexPath) as! WordCell;
-        
-
         let word: Word!
         if (isFiltering) {
             word = filteredWords[indexPath.row]
         } else {
-            word = fetchedResultsController.object(at: indexPath);
+            word = words[indexPath.row];
         }
         cell.wordLabel.text = word.word;
         cell.definitionLabel.text = word.def;
@@ -168,9 +109,7 @@ extension WordsTableController { //load page
         return cell;
     }
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-//        let word = self.words.remove(at: indexPath.row);
-        
-        let word = self.fetchedResultsController.object(at: indexPath);
+        let word = self.words.remove(at: indexPath.row);
         self.context.delete(word);
         do {
             try context.save();
@@ -178,19 +117,36 @@ extension WordsTableController { //load page
             print("error deleting from context: \(error)")
         }
         tableView.deleteRows(at:[indexPath], with: .automatic);
-
-        if (tableView.numberOfRows(inSection: indexPath.section) == 1) {
-            tableView.deleteSections([indexPath.section], with: .automatic)
-        }
-
-        
     }
-    
-    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        guard let sectionInfo = self.fetchedResultsController.sections?[section] else {
-            return nil;
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        let fetchRequest = NSFetchRequest<Word>(entityName: "Word")
+        
+        do {
+            self.words = try self.context.fetch(fetchRequest);
+        } catch let error {
+            print ("error fetching words: \(error)")
         }
-        return sectionInfo.name;
+        
+        newDefTextView.layer.cornerRadius = 5;
+        searchController.searchBar.autocapitalizationType = .none;
+        searchController.searchResultsUpdater = self;
+        searchController.obscuresBackgroundDuringPresentation = false;
+        self.definesPresentationContext = true;
+        self.navigationItem.searchController = searchController;
+        
+        
+        self.tableView.tableFooterView = UIView()
+        self.newWordView.layer.cornerRadius = 10
+        tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.handleTap(tapRecognizer:)));
+        tapRecognizer.delegate = self
+        self.navigationController!.view.addGestureRecognizer(tapRecognizer);
+        tapRecognizer.isEnabled = false;
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated);
+        self.tableView.reloadData();
     }
 } //load page
 extension WordsTableController : UISearchResultsUpdating {
@@ -199,11 +155,11 @@ extension WordsTableController : UISearchResultsUpdating {
         filterContentForSearchText(searchBar.text!)
     }
     func filterContentForSearchText(_ searchText: String) {
-        self.filteredWords = self.fetchedResultsController.fetchedObjects ?? [].filter { (word: Word) -> Bool in
+        self.filteredWords = self.words.filter { (word: Word) -> Bool in
             (word.word?.lowercased().contains(searchText.lowercased()) ?? false);
         }
         if (searchText == "") {
-            filteredWords = self.fetchedResultsController.fetchedObjects ?? [];
+            filteredWords = words;
         }
         tableView.reloadData()
     }
@@ -231,7 +187,7 @@ extension WordsTableController {
         if (isFiltering) {
             wordDetailController.word = filteredWords[selectedIndexPath.row]
         } else {
-            wordDetailController.word = self.fetchedResultsController.object(at: selectedIndexPath);
+            wordDetailController.word = words[selectedIndexPath.row];
         }
     }
 }

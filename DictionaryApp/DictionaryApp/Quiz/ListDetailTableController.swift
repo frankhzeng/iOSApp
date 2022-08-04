@@ -43,7 +43,7 @@ extension ListDetailTableController {
     }
 }
 extension ListDetailTableController : WordSelectorDelegate {
-    func wordSelectorDidAddNewWords(words: [Word], toList list: List) {
+    func wordSelectorDidAddWords(words: [Word]) {
 //        let mutableWords = self.list.words?.mutableCopy() as? NSMutableSet
 //        for word in words {
 //            mutableWords?.add(word)
@@ -59,6 +59,7 @@ extension ListDetailTableController : WordSelectorDelegate {
         } catch let error {
             print ("error adding to list: \(error)")
         }
+        print(words);
         self.tableView.reloadData()
     }
 }
@@ -72,7 +73,6 @@ extension ListDetailTableController {
         if (segue.identifier == "SelectWords") {
             let wordSelectorController = segue.destination as! WordSelectorController
             wordSelectorController.delegate = self;
-            wordSelectorController.list = list;
         }
     }
 }
