@@ -1,0 +1,427 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		DB02F10228906AB10033C03D /* WordDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB02F10128906AB10033C03D /* WordDetailController.swift */; };
+		DB1E1330288F0919004E2CB7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1E132F288F0919004E2CB7 /* AppDelegate.swift */; };
+		DB1E1332288F0919004E2CB7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1E1331288F0919004E2CB7 /* SceneDelegate.swift */; };
+		DB1E1334288F0919004E2CB7 /* WordsTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1E1333288F0919004E2CB7 /* WordsTableController.swift */; };
+		DB1E1337288F0919004E2CB7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB1E1335288F0919004E2CB7 /* Main.storyboard */; };
+		DB1E1339288F0920004E2CB7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB1E1338288F0920004E2CB7 /* Assets.xcassets */; };
+		DB1E133C288F0920004E2CB7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB1E133A288F0920004E2CB7 /* LaunchScreen.storyboard */; };
+		DB1E1349288F17C0004E2CB7 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1E1348288F17C0004E2CB7 /* DataModel.swift */; };
+		DB2049192894599E00BA024D /* QuizListTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB2049182894599E00BA024D /* QuizListTableController.swift */; };
+		DB20491C28945CAF00BA024D /* QuizController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB20491B28945CAF00BA024D /* QuizController.swift */; };
+		DB24EBBD289C3CD200F99F78 /* Word+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB24EBBB289C3CD200F99F78 /* Word+CoreDataClass.swift */; };
+		DB24EBBE289C3CD200F99F78 /* Word+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB24EBBC289C3CD200F99F78 /* Word+CoreDataProperties.swift */; };
+		DBAF9BF328998DDD0036035A /* WordModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DBAF9BF128998DDD0036035A /* WordModel.xcdatamodeld */; };
+		DBAF9C022899A2570036035A /* List+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBAF9BFE2899A2570036035A /* List+CoreDataClass.swift */; };
+		DBAF9C032899A2570036035A /* List+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBAF9BFF2899A2570036035A /* List+CoreDataProperties.swift */; };
+		DBBF75162891A713007AE65B /* EditWordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBBF75152891A713007AE65B /* EditWordController.swift */; };
+		DBBF75192891BA57007AE65B /* ListCollectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBBF75182891BA57007AE65B /* ListCollectionController.swift */; };
+		DBBF751C2891BFAA007AE65B /* ListDetailTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBBF751B2891BFAA007AE65B /* ListDetailTableController.swift */; };
+		DBF728662893087B00B52B34 /* WordSelectorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF728652893087B00B52B34 /* WordSelectorController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		DB02F10128906AB10033C03D /* WordDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordDetailController.swift; sourceTree = "<group>"; };
+		DB1E132C288F0919004E2CB7 /* DictionaryApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DictionaryApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB1E132F288F0919004E2CB7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		DB1E1331288F0919004E2CB7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		DB1E1333288F0919004E2CB7 /* WordsTableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordsTableController.swift; sourceTree = "<group>"; };
+		DB1E1336288F0919004E2CB7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		DB1E1338288F0920004E2CB7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DB1E133B288F0920004E2CB7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		DB1E133D288F0920004E2CB7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DB1E1348288F17C0004E2CB7 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
+		DB2049182894599E00BA024D /* QuizListTableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = QuizListTableController.swift; path = DictionaryApp/Quiz/QuizListTableController.swift; sourceTree = SOURCE_ROOT; };
+		DB20491B28945CAF00BA024D /* QuizController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = QuizController.swift; path = DictionaryApp/Quiz/QuizController.swift; sourceTree = SOURCE_ROOT; };
+		DB24EBBB289C3CD200F99F78 /* Word+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Word+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		DB24EBBC289C3CD200F99F78 /* Word+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Word+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		DBAF9BF228998DDD0036035A /* WordModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WordModel.xcdatamodel; sourceTree = "<group>"; };
+		DBAF9BFE2899A2570036035A /* List+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "List+CoreDataClass.swift"; path = "DictionaryApp/CoreData/List+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		DBAF9BFF2899A2570036035A /* List+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "List+CoreDataProperties.swift"; path = "DictionaryApp/CoreData/List+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		DBBF75152891A713007AE65B /* EditWordController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditWordController.swift; sourceTree = "<group>"; };
+		DBBF75182891BA57007AE65B /* ListCollectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ListCollectionController.swift; path = DictionaryApp/Quiz/ListCollectionController.swift; sourceTree = SOURCE_ROOT; };
+		DBBF751B2891BFAA007AE65B /* ListDetailTableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ListDetailTableController.swift; path = DictionaryApp/Quiz/ListDetailTableController.swift; sourceTree = SOURCE_ROOT; };
+		DBF728652893087B00B52B34 /* WordSelectorController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordSelectorController.swift; sourceTree = SOURCE_ROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DB1E1329288F0919004E2CB7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DB1E1323288F0919004E2CB7 = {
+			isa = PBXGroup;
+			children = (
+				DB1E132E288F0919004E2CB7 /* DictionaryApp */,
+				DB1E132D288F0919004E2CB7 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DB1E132D288F0919004E2CB7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DB1E132C288F0919004E2CB7 /* DictionaryApp.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DB1E132E288F0919004E2CB7 /* DictionaryApp */ = {
+			isa = PBXGroup;
+			children = (
+				DBAF9C072899A2E20036035A /* CoreData */,
+				DBAF9C082899A2F40036035A /* Quiz */,
+				DBF728652893087B00B52B34 /* WordSelectorController.swift */,
+				DB1E132F288F0919004E2CB7 /* AppDelegate.swift */,
+				DB1E1331288F0919004E2CB7 /* SceneDelegate.swift */,
+				DB1E1333288F0919004E2CB7 /* WordsTableController.swift */,
+				DB02F10128906AB10033C03D /* WordDetailController.swift */,
+				DBBF75152891A713007AE65B /* EditWordController.swift */,
+				DB1E1335288F0919004E2CB7 /* Main.storyboard */,
+				DBAF9BF128998DDD0036035A /* WordModel.xcdatamodeld */,
+				DB1E1338288F0920004E2CB7 /* Assets.xcassets */,
+				DB1E133A288F0920004E2CB7 /* LaunchScreen.storyboard */,
+				DB1E133D288F0920004E2CB7 /* Info.plist */,
+			);
+			path = DictionaryApp;
+			sourceTree = "<group>";
+		};
+		DBAF9C072899A2E20036035A /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				DB24EBBB289C3CD200F99F78 /* Word+CoreDataClass.swift */,
+				DB24EBBC289C3CD200F99F78 /* Word+CoreDataProperties.swift */,
+				DBAF9BFE2899A2570036035A /* List+CoreDataClass.swift */,
+				DBAF9BFF2899A2570036035A /* List+CoreDataProperties.swift */,
+				DB1E1348288F17C0004E2CB7 /* DataModel.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		DBAF9C082899A2F40036035A /* Quiz */ = {
+			isa = PBXGroup;
+			children = (
+				DBBF751B2891BFAA007AE65B /* ListDetailTableController.swift */,
+				DBBF75182891BA57007AE65B /* ListCollectionController.swift */,
+				DB20491B28945CAF00BA024D /* QuizController.swift */,
+				DB2049182894599E00BA024D /* QuizListTableController.swift */,
+			);
+			path = Quiz;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DB1E132B288F0919004E2CB7 /* DictionaryApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DB1E1340288F0920004E2CB7 /* Build configuration list for PBXNativeTarget "DictionaryApp" */;
+			buildPhases = (
+				DB1E1328288F0919004E2CB7 /* Sources */,
+				DB1E1329288F0919004E2CB7 /* Frameworks */,
+				DB1E132A288F0919004E2CB7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DictionaryApp;
+			productName = DictionaryApp;
+			productReference = DB1E132C288F0919004E2CB7 /* DictionaryApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DB1E1324288F0919004E2CB7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1230;
+				LastUpgradeCheck = 1230;
+				TargetAttributes = {
+					DB1E132B288F0919004E2CB7 = {
+						CreatedOnToolsVersion = 12.3;
+					};
+				};
+			};
+			buildConfigurationList = DB1E1327288F0919004E2CB7 /* Build configuration list for PBXProject "DictionaryApp" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DB1E1323288F0919004E2CB7;
+			productRefGroup = DB1E132D288F0919004E2CB7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DB1E132B288F0919004E2CB7 /* DictionaryApp */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DB1E132A288F0919004E2CB7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB1E133C288F0920004E2CB7 /* LaunchScreen.storyboard in Resources */,
+				DB1E1339288F0920004E2CB7 /* Assets.xcassets in Resources */,
+				DB1E1337288F0919004E2CB7 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DB1E1328288F0919004E2CB7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DBBF75192891BA57007AE65B /* ListCollectionController.swift in Sources */,
+				DBF728662893087B00B52B34 /* WordSelectorController.swift in Sources */,
+				DBAF9C022899A2570036035A /* List+CoreDataClass.swift in Sources */,
+				DB20491C28945CAF00BA024D /* QuizController.swift in Sources */,
+				DB1E1334288F0919004E2CB7 /* WordsTableController.swift in Sources */,
+				DBAF9C032899A2570036035A /* List+CoreDataProperties.swift in Sources */,
+				DB1E1349288F17C0004E2CB7 /* DataModel.swift in Sources */,
+				DB02F10228906AB10033C03D /* WordDetailController.swift in Sources */,
+				DB2049192894599E00BA024D /* QuizListTableController.swift in Sources */,
+				DBBF75162891A713007AE65B /* EditWordController.swift in Sources */,
+				DBBF751C2891BFAA007AE65B /* ListDetailTableController.swift in Sources */,
+				DB24EBBD289C3CD200F99F78 /* Word+CoreDataClass.swift in Sources */,
+				DB1E1330288F0919004E2CB7 /* AppDelegate.swift in Sources */,
+				DB1E1332288F0919004E2CB7 /* SceneDelegate.swift in Sources */,
+				DBAF9BF328998DDD0036035A /* WordModel.xcdatamodeld in Sources */,
+				DB24EBBE289C3CD200F99F78 /* Word+CoreDataProperties.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		DB1E1335288F0919004E2CB7 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DB1E1336288F0919004E2CB7 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		DB1E133A288F0920004E2CB7 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DB1E133B288F0920004E2CB7 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DB1E133E288F0920004E2CB7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		DB1E133F288F0920004E2CB7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DB1E1341288F0920004E2CB7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2QE2GEMY3Y;
+				INFOPLIST_FILE = DictionaryApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = QED.DictionaryApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DB1E1342288F0920004E2CB7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2QE2GEMY3Y;
+				INFOPLIST_FILE = DictionaryApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = QED.DictionaryApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DB1E1327288F0919004E2CB7 /* Build configuration list for PBXProject "DictionaryApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DB1E133E288F0920004E2CB7 /* Debug */,
+				DB1E133F288F0920004E2CB7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DB1E1340288F0920004E2CB7 /* Build configuration list for PBXNativeTarget "DictionaryApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DB1E1341288F0920004E2CB7 /* Debug */,
+				DB1E1342288F0920004E2CB7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		DBAF9BF128998DDD0036035A /* WordModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				DBAF9BF228998DDD0036035A /* WordModel.xcdatamodel */,
+			);
+			currentVersion = DBAF9BF228998DDD0036035A /* WordModel.xcdatamodel */;
+			path = WordModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = DB1E1324288F0919004E2CB7 /* Project object */;
+}
